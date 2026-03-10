@@ -1,0 +1,223 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                    TITAN VISION OS                            ║
+║              UNICORN 32 BUILD - EXECUTION GUIDE               ║
+║          Copyright © Julius Cameron Hill 2026                 ║
+╚═══════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════
+STEP 1: SYSTEM PREPARATION
+═══════════════════════════════════════════════════════════════
+
+Your Ubuntu terminal is ready. Execute these commands in order:
+
+1.1 Install All Dependencies (One-Time Setup)
+----------------------------------------------
+sudo ./titan_setup.sh
+
+⏱️  Estimated time: 10-15 minutes
+📝 This installs: Zig, Rust, Go, Julia, Python packages, V4L2
+
+⚠️  CRITICAL: After this completes, you MUST restart WSL:
+   - From Windows PowerShell: wsl --shutdown
+   - Reopen Ubuntu terminal
+
+
+═══════════════════════════════════════════════════════════════
+STEP 2: CAMERA HARDWARE CONNECTION (WSL2 USERS ONLY)
+═══════════════════════════════════════════════════════════════
+
+2.1 Set Camera Mode
+--------------------
+Physical switch on camera: PC CAMERA (not MSDC)
+
+2.2 Attach Camera to WSL (Windows PowerShell as Administrator)
+---------------------------------------------------------------
+# Install USB bridge (one-time)
+Download: https://github.com/dorssel/usbipd-win/releases
+Install the .msi file
+
+# Find your camera
+usbipd list
+
+# Bind it (one-time per device)
+usbipd bind --busid <YOUR_BUSID>
+
+# Attach to Ubuntu
+usbipd attach --wsl --busid <YOUR_BUSID>
+
+2.3 Verify in Ubuntu
+---------------------
+lsusb                    # Should show your camera
+v4l2-ctl --list-devices  # Should show /dev/video0
+
+
+═══════════════════════════════════════════════════════════════
+STEP 3: BUILD THE POLYGLOT STACK
+═══════════════════════════════════════════════════════════════
+
+3.1 Compile All Components
+---------------------------
+./titan_build.sh
+
+⏱️  Estimated time: 5-10 minutes
+
+This builds:
+  [1/4] Zig Metal Layer (camera_driver.zig)
+  [2/4] Rust Logic Engine (src/lib.rs)
+  [3/4] Julia AI Brain (titan_brain.jl)
+  [4/4] Python Orchestrator (titan_injection.py)
+
+3.2 Verify Build
+----------------
+./titan_verify.sh
+
+✓ All checks should pass
+⚠️ Yellow warnings are non-critical
+
+
+═══════════════════════════════════════════════════════════════
+STEP 4: LAUNCH TITAN VISION
+═══════════════════════════════════════════════════════════════
+
+4.1 Start the Engine
+--------------------
+./run_titan.sh
+
+You should see:
+  🚀 Initializing TITAN VISION OS...
+  ✅ Rust Logic Engine loaded
+  📷 Camera initialized: 3840x2160 @ 60fps
+  🎥 Starting 60FPS nodal injection...
+
+
+═══════════════════════════════════════════════════════════════
+STEP 5: CONTROL THE NODES (LIVE)
+═══════════════════════════════════════════════════════════════
+
+Keyboard Controls (press while engine is running):
+
+┌──────────────────────────────────────────┐
+│ KEY  │ NODE                 │ FUNCTION   │
+├──────────────────────────────────────────┤
+│  S   │ Sharpen              │ SIMD edge  │
+│  D   │ Denoise              │ Blur noise │
+│  N   │ Night Vision         │ Green phos │
+│  M   │ Motion Detection     │ Track move │
+│  +   │ Digital Zoom         │ 1-10x crop │
+│  -   │ Zoom Out             │ Return 1x  │
+│  Q   │ Quit                 │ Shutdown   │
+└──────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════
+STEP 6: RECORD YOUR TRANSFORMATION (TRIPOD)
+═══════════════════════════════════════════════════════════════
+
+6.1 Physical Setup
+------------------
+1. Mount external camera on tripod
+2. Aim at your monitor showing Titan Vision
+3. Start recording on tripod camera
+
+6.2 Demonstration Sequence
+--------------------------
+ACT I: The Raw Feed
+  - Show baseline (all nodes OFF)
+  - Point out grain, flat colors
+
+ACT II: The Injection
+  - Press S: Sharpen activates (edges pop)
+  - Press N: Night vision (green glow)
+  - Dim lights to show night vision power
+
+ACT III: The Intelligence
+  - Press M: Motion detection
+  - Wave hand → bounding boxes appear
+  - Press +: Digital zoom 2x-4x
+  - Show FPS stays locked at 60
+
+
+═══════════════════════════════════════════════════════════════
+TROUBLESHOOTING QUICK REFERENCE
+═══════════════════════════════════════════════════════════════
+
+❌ "Camera not found"
+   → Check: lsusb
+   → Reattach: usbipd attach --wsl --busid <BUSID>
+
+❌ "Rust library not found"
+   → Run: ./titan_build.sh
+   → Check: ls target/release/libtitan_engine.so
+
+❌ "Permission denied /dev/video0"
+   → Run: sudo usermod -aG video $USER
+   → Logout/login Ubuntu
+
+❌ FPS drops below 60
+   → Check thermals: sensors
+   → Reduce zoom: Press -
+   → Disable heavy nodes: Press D (denoise off)
+
+❌ WSL "Failed to translate" errors
+   → Edit: sudo nano /etc/wsl.conf
+   → Add: [interop]\nappendWindowsPath = false
+   → Restart: wsl --shutdown
+
+
+═══════════════════════════════════════════════════════════════
+PERFORMANCE OPTIMIZATION
+═══════════════════════════════════════════════════════════════
+
+For Mini PC / Lower-end Hardware:
+  1. Start with 1080p instead of 4K:
+     Edit titan_injection.py line 20:
+     width=1920, height=1080
+  
+  2. Reduce processing threads:
+     Use only essential nodes (S for sharpen only)
+  
+  3. Monitor thermals proactively:
+     Watch CPU temp in another terminal:
+     watch -n 1 sensors
+
+
+═══════════════════════════════════════════════════════════════
+NEXT LEVEL: AUTO-EDIT & YOUTUBE UPLOAD
+═══════════════════════════════════════════════════════════════
+
+Phase 2 features (coming in documentation update):
+  - Julia auto-cut script integration
+  - YouTube API upload automation
+  - Real-time caption overlay
+  - Multi-camera sync
+
+
+═══════════════════════════════════════════════════════════════
+IP PROTECTION REMINDER
+═══════════════════════════════════════════════════════════════
+
+This is YOUR build. The polyglot architecture is:
+  ✓ Patent-pending (zero-copy nodal injection)
+  ✓ Trade secret (SIMD patterns)
+  ✓ Trademarked (Titan Vision logo)
+
+Keep source code private. Share only compiled binaries.
+
+
+═══════════════════════════════════════════════════════════════
+READY TO LAUNCH?
+═══════════════════════════════════════════════════════════════
+
+Your command sequence:
+  1. sudo ./titan_setup.sh        # One-time
+  2. wsl --shutdown               # From Windows (one-time)
+  3. ./titan_build.sh             # After restart
+  4. ./titan_verify.sh            # Check all systems
+  5. ./run_titan.sh               # LAUNCH!
+
+Press S, D, N, M to activate nodes.
+Press Q to quit.
+
+═══════════════════════════════════════════════════════════════
+"We inject intelligence into the light hitting your sensor."
+═══════════════════════════════════════════════════════════════
