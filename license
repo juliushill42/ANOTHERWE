@@ -1,0 +1,168 @@
+PROPRIETARY LICENSE — TITANU AI LLC
+
+© 2026 Julius Cameron Hill (JCH-2026). All rights reserved.
+
+This software and all associated materials are proprietary to TitanU AI LLC and 
+licensed solely for internal use by authorized personnel. No part of this work 
+may be reproduced, distributed, modified, or transmitted in any form or by any 
+means without prior written permission from TitanU AI LLC.
+
+===============================================================================
+
+1. DEFINITIONS
+
+   "This License" refers to this proprietary license agreement.
+
+   "The Software" refers to the Titan Agentic AI Engineer backend orchestration 
+   script, associated code, documentation, and architectural patterns.
+
+   "You" refers to the individual or entity receiving this Software under this 
+   License.
+
+   "TitanU AI LLC" refers to the legal entity holding all rights to this Software.
+
+===============================================================================
+
+2. LICENSE GRANT
+
+   Subject to the terms of this License, TitanU AI LLC grants You a non-exclusive, 
+   non-transferable, limited license to:
+
+   a) Use the Software internally for authorized purposes only.
+   b) Run the Software on hardware systems You control.
+   c) Access and review the source code for internal understanding.
+
+   This License does NOT grant You:
+
+   a) The right to distribute, sell, or sublicense the Software.
+   b) The right to modify, derivative work, or create adaptations.
+   c) The right to reverse engineer, decompile, or disassemble.
+   d) The right to remove, alter, or obscure any license notices.
+
+===============================================================================
+
+3. PATENT PROTECTION
+
+   This Software contains novel architectural patterns covered under the 
+   JCH-2026 provisional patent series filed January 20, 2026:
+
+   - JCH-2026-001: Pedersen ZK audit chain at substrate level
+   - JCH-2026-006: Sovereign WireGuard mesh with key rotation daemon
+   - JCH-2026-009/010: WASM isolate + Go gateway + local GGUF routing
+   - JCH-2026-JUDGE-001: Multi-agent adversarial swarm legal evaluation
+
+   Any derivative system — including AI-generated "clean room" rewrites — that 
+   reproduces these architectural patterns, data flow designs, or functional 
+   specifications is subject to patent infringement claims regardless of whether 
+   source code was directly copied.
+
+   Pattern replication ≠ clean room immunity.
+
+===============================================================================
+
+4. INTELLECTUAL PROPERTY
+
+   All intellectual property rights, including but not limited to copyrights, 
+   patents, trade secrets, and architectural patterns, are owned exclusively by 
+   TitanU AI LLC and Julius Cameron Hill.
+
+   This License does not transfer ownership. You receive only the limited rights 
+   explicitly granted herein.
+
+===============================================================================
+
+5. RESTRICTIONS
+
+   You shall NOT:
+
+   a) Copy, modify, or distribute the Software.
+   b) Use the Software for commercial purposes without explicit licensing.
+   c) Attempt to extract, reproduce, or replicate patented architectural patterns.
+   d) Remove or alter any proprietary notices, labels, or marks.
+   e) Use the Software to create competing or derivative products.
+   f) Share access credentials, tokens, or authentication mechanisms.
+
+===============================================================================
+
+6. AUDIT AND COMPLIANCE
+
+   TitanU AI LLC may audit Your use of the Software to ensure compliance with 
+   this License. You must maintain records of Usage and provide access for 
+   audit purposes upon reasonable request.
+
+===============================================================================
+
+7. TERM AND TERMINATION
+
+   This License is effective upon receipt of the Software and continues 
+   indefinitely unless terminated by TitanU AI LLC.
+
+   TitanU AI LLC may terminate this License immediately if You breach any term. 
+   Upon termination, You must:
+
+   a) Cease all use of the Software.
+   b) Destroy all copies in Your possession.
+   c) Return or delete all associated materials.
+
+===============================================================================
+
+8. NO WARRANTY
+
+   The Software is provided "AS IS" without warranty of any kind, express or 
+   implied, including but not limited to warranties of merchantability, fitness 
+   for a particular purpose, or non-infringement.
+
+   TitanU AI LLC does not warrant that the Software will be error-free, 
+   uninterrupted, or secure.
+
+===============================================================================
+
+9. LIMITATION OF LIABILITY
+
+   In no event shall TitanU AI LLC be liable for any indirect, incidental, 
+   special, consequential, or punitive damages, including loss of profits, data, 
+   or business interruption, arising from Your use of the Software.
+
+===============================================================================
+
+10. INFRINGEMENT
+
+    Any unauthorized use, reproduction, modification, or derivative work may 
+    constitute patent infringement, copyright infringement, or trade secret 
+    violation. TitanU AI LLC will pursue all legal remedies available.
+
+===============================================================================
+
+11. LICENSING INQUIRIES
+
+    For commercial licensing, acquisition, or partnership inquiries:
+
+    Julius C. Hill
+    TitanU AI LLC
+    Nashville, Tennessee, US
+    Email: your-email@titanu.ai
+
+===============================================================================
+
+12. GOVERNING LAW
+
+    This License shall be governed by and construed in accordance with the laws 
+    of the United States and the State of Tennessee, without regard to conflict 
+    of law principles.
+
+===============================================================================
+
+13. ENTIRE AGREEMENT
+
+    This License constitutes the entire agreement between You and TitanU AI LLC 
+    concerning the Software and supersedes all prior or contemporaneous 
+    understandings, agreements, or representations.
+
+===============================================================================
+
+END OF LICENSE
+
+===============================================================================
+
+⚖️ Built for acquisition readiness. Protected by patent and copyright law.
+© 2026 TitanU AI LLC — All Rights Reserved
